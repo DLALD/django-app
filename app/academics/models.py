@@ -19,3 +19,50 @@ class Person(models.Model):
     created_at = models.DateTimeField(default=datetime.datetime.now())
     updated_at = models.DateTimeField(default=datetime.datetime.now())
     deleted_at = models.DateTimeField(null = True, blank = True)
+
+class Cities(models.Model):
+    name = models.CharField(max_length=100, blank = True)
+    abrev = models.CharField(max_length=10, blank = True)
+    descrip = models.CharField(max_length=10, blank = True)
+    created_at = models.DateTimeField(default=datetime.datetime.now())
+    updated_at = models.DateTimeField(default=datetime.datetime.now())
+    deleted_at = models.DateTimeField(null = True, blank = True)
+
+class Departments(models.Model):
+    name = models.CharField(max_length=100, blank = True)
+    abrev = models.CharField(max_length=10, blank = True)
+    descrip = models.CharField(max_length=10, blank = True)
+    created_at = models.DateTimeField(default=datetime.datetime.now())
+    updated_at = models.DateTimeField(default=datetime.datetime.now())
+    deleted_at = models.DateTimeField(null = True, blank = True)
+
+class Countries(models.Model):
+    name = models.CharField(max_length=100, blank = True)
+    abrev = models.CharField(max_length=10, blank = True)
+    descrip = models.CharField(max_length=10, blank = True)
+    created_at = models.DateTimeField(default=datetime.datetime.now())
+    updated_at = models.DateTimeField(default=datetime.datetime.now())
+    deleted_at = models.DateTimeField(null = True, blank = True)
+
+class Identifications_types(models.Model):
+    name = models.CharField(max_length=50, blank = True)
+    abrev = models.CharField(max_length=10, blank = True)
+    descrip = models.CharField(max_length=100, blank = True)
+    created_at = models.DateTimeField(default=datetime.datetime.now())
+    updated_at = models.DateTimeField(default=datetime.datetime.now())
+    deleted_at = models.DateTimeField(null = True, blank = True)
+
+class Students(models.Model):
+    code = models.CharField(max_length=50, blank = True)
+    status = models.BooleanField(null = True, blank = True,default = True)
+    created_at = models.DateTimeField(default=datetime.datetime.now())
+    updated_at = models.DateTimeField(default=datetime.datetime.now())
+    deleted_at = models.DateTimeField(null = True, blank = True)
+
+
+
+
+
+
+
+    
