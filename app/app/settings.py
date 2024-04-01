@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
+    'rest_framework',
     'academics.apps.AcademicsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
