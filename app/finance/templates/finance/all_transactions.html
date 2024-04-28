@@ -4,28 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Transactions</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-    <h1>All Transactions</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Client Product ID</th>
-                <th>Amount</th>
-                <th>Transaction Type</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for transaction in transactions %}
-            <tr>
-                <td>{{ transaction.id }}</td>
-                <td>{{ transaction.id_cliente_producto }}</td>
-                <td>{{ transaction.monto }}</td>
-                <td>{{ transaction.tipo_transaccion }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10">
+                <div class="panel panel-primary">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            All Transactions
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        {% load humanize %}
+                        {% for transaction in transactions %}
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Transaction # {{ transaction.id }}</h4>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Client Product ID</th>
+                                            <th>Amount</th>
+                                            <th>Transaction Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ transaction.id }}</td>
+                                            <td>{{ transaction.id_cliente_producto }}</td>
+                                            <td>${{ transaction.monto|floatformat:2|intcomma }}</td>
+                                            <td>{{ transaction.tipo_transaccion }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

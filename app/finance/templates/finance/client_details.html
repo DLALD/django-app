@@ -4,12 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            margin-top:20px;
+            background:#eee;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .card {
+            box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+        }
+        .avatar.sm {
+            width: 2.25rem;
+            height: 2.25rem;
+            font-size: .818125rem;
+        }
+        .table-nowrap .table td, .table-nowrap .table th {
+            white-space: nowrap;
+        }
+        .table>:not(caption)>*>* {
+            padding: 0.75rem 1.25rem;
+            border-bottom-width: 1px;
+        }
+        table th {
+            font-weight: 600;
+            background-color: #eeecfd !important;
+        }
+    </style>
 </head>
 <body>
-    <h1>Detalles del Cliente</h1>
-    <p>Nombre: {{ client.nombres }} {{ client.apellidos }}</p>
-    <p>Correo: {{ client.correo }}</p>
-    <p>Celular: {{ client.celular }}</p>
-    <!-- Incluye aquí cualquier otro detalle que quieras mostrar sobre el cliente -->
+    <div class="container">
+        <h1>Detalles del Cliente</h1>
+        <p><strong>Nombre:</strong> {{ client.nombres }} {{ client.apellidos }}</p>
+        <p><strong>Correo:</strong> {{ client.correo }}</p>
+        <p><strong>Celular:</strong> {{ client.celular }}</p>
+    </div>
 </body>
 </html>

@@ -51,4 +51,5 @@ class Transaction(DateTimeModel):
     tipo_transaccion = models.ForeignKey(TransactionType, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Transacción {self.id}"
+        monto_formateado = "${:,.2f}".format(self.monto)
+        return f"Transacción {self.id} - Monto: {monto_formateado}"
